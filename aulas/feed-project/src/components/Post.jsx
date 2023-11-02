@@ -1,12 +1,16 @@
 import styles from './Post.module.css';
 import Comment from './Comment';
+import Avatar from './Avatar';
 
 export function Post(props) {
     return (
         <article className={styles.post}>
             <header>
                 <div className={styles.author}>
-                    <img src="https://img.freepik.com/fotos-premium/tony-stark-personagem-de-desenho-animado-do-homem-de-ferro-ia-generativa_934475-11586.jpg?w=200" className={styles.avatar} />
+                    <Avatar
+                        src={"https://img.freepik.com/fotos-premium/tony-stark-personagem-de-desenho-animado-do-homem-de-ferro-ia-generativa_934475-11586.jpg?w=200"}
+                        
+                    />
                     <div className={styles.authorInfo}>
                         <strong>Tony Stark</strong>
                         <span>Iron Man</span>
