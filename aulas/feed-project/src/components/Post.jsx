@@ -1,31 +1,46 @@
+import { format, formatDistanceToNow } from 'date-fns';
+import ptBR from 'date-fns/locale/pt-BR';
 import styles from './Post.module.css';
 import Comment from './Comment';
 import Avatar from './Avatar';
 
-export function Post(props) {
+export function Post({ author, publishedAt, content }) {
+    const publishedDateFormated = format(publishedAt, "d 'de' LLLL 'ás' HH:mm'h'", {
+        locale: ptBR
+    })
+
+    const publishedDateRelativeToNow = formatDistanceToNow(publishedAt, {
+        locale: ptBR,
+        addSuffix: true
+    })
+
     return (
         <article className={styles.post}>
             <header>
                 <div className={styles.author}>
                     <Avatar
-                        src={"https://img.freepik.com/fotos-premium/tony-stark-personagem-de-desenho-animado-do-homem-de-ferro-ia-generativa_934475-11586.jpg?w=200"}
-                        
+                        src={author.avatarURL}
                     />
                     <div className={styles.authorInfo}>
-                        <strong>Tony Stark</strong>
-                        <span>Iron Man</span>
+                        <strong>{author.name}</strong>
+                        <span>{author.role}</span>
                     </div>
                 </div>
-                <time title='02 de Novembro as 11:28' dateTime='2023-11-02'> Publicado há 1 hora</time>
+                <time title={publishedDateFormated} dateTime={publishedAt.toISOString()}> {
+                    publishedDateRelativeToNow
+                }</time>
             </header>
             <div className={styles.content}>
-                <p>Hello Murilo 👨‍💻</p>
-                <p>Acabei de subir mais um projeto no meu portifa, é um projeto que fiz para aprender React 🚀.</p>
-                <p>👉{' '}<a href="">TonyStark/starkindustries</a></p>
-                <p>
-                    <a href="">#novoProjeto</a>{' '}
-                    <a href="">#react</a>{' '}
-                </p>
+                {
+                    content.map((line) => {
+                        if (line.type === 'paragraph') {
+                            return <p>{line.content}</p>
+                        } else {
+                            return <p><a href=''>{line.content}</a></p>
+                        }
+
+                    })
+                }
             </div>
             <form className={styles.commentForm}>
                 <strong>Deixe seu feedback</strong>
