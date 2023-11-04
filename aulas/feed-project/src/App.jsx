@@ -35,7 +35,7 @@ const posts = [
     author: {
       name: 'Steve Rogers',
       avatarURL: "https://i.pinimg.com/736x/ba/32/c3/ba32c3707b4625af137ee5892c10a36f.jpg",
-      role: "American Capitain",      
+      role: "American Capitain",
     },
     content: [
       {
@@ -68,6 +68,7 @@ function App() {
             posts.map((post) => {
               return (
                 <Post
+                  key={post.id}
                   author={post.author}
                   content={post.content}
                   publishedAt={post.publishedAt}
