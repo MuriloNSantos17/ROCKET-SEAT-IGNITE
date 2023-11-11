@@ -9,6 +9,7 @@
 }
 
 .header img{
-    width: 126px;
-    height: 48px;
+    width: 7.8rem;
+    height: 3rem;
+    cursor: pointer;
 }
