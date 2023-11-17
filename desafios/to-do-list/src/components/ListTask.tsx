@@ -8,12 +8,21 @@ export interface TasksModel {
 }
 
 interface TaskProps {
-    tasks: TasksModel[]
+    tasks: TasksModel[],
+    deleteTask: (id: number) => void
 }
 
-const ListTaks = ({ tasks }: TaskProps) => {
+const ListTaks = ({ tasks, deleteTask }: TaskProps,) => {
 
     const [finishedTask, setFineshedTask] = useState(0);
+
+    const endTask = () => {
+        setFineshedTask(finishedTask + 1);
+    }
+
+    const restartTask = () => {
+        setFineshedTask(finishedTask - 1);
+    }
 
     return (
         <Fragment>
@@ -21,7 +30,7 @@ const ListTaks = ({ tasks }: TaskProps) => {
                 <p className={styles.createdTask}>
                     Tarefas Criadas
                     <span>
-                        {tasks.length}
+                        {tasks.length + ' '}
                     </span>
                 </p>
                 <p className={styles.finishedTask}>
@@ -31,10 +40,22 @@ const ListTaks = ({ tasks }: TaskProps) => {
                         {' ' + tasks.length}
                     </span>
                 </p>
+
+
+
             </div>
             {
-                tasks.map((item) => {                
-                    return <TaskDetail id={item.id} task={item.task} />
+                tasks.map((item) => {
+                    return (
+                        <TaskDetail
+                            id={item.id}
+                            key={item.id}
+                            task={item.task}
+                            endTask={endTask}
+                            restartTask={restartTask}
+                            deleteTask={deleteTask}
+                        />
+                    )
                 })
             }
         </Fragment>

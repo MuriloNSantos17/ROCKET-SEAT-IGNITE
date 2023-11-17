@@ -1,25 +1,27 @@
-*{
+* {
     margin: 0;
     padding: 0;
 }
 
-body, input, button{
+body,
+input,
+button {
     font-family: 'Inter', sans-serif;
 }
 
 
-:focus{
+:focus {
     outline: transparent;
 }
 
-body{
+body {
     background-color: var(--gray-600);
 }
 
-:root{
+:root {
     --blue: #4EA8DE;
     --blue-dark: #1E6F9F;
-    
+
     --purple: #8284FA;
     --purple-dark: #8284FA;
 
@@ -34,3 +36,32 @@ body{
     --danger: #E25858;
 
 }
+
+input[type=checkbox] {
+    position: relative;
+    cursor: pointer;
+    margin-right: 1rem;
+}
+
+/*
+input[type=checkbox]:checked:before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 0;
+    left: 0;
+    background-color: #1E80EF;
+}
+
+input[type=checkbox]:checked:after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 0;
+    left: 0;
+    background-color: red;
+} */

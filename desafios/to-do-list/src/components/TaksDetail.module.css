@@ -2,7 +2,43 @@
     margin: auto;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     padding: 1rem;
+    background-color: var(--gray-400);
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    border-radius: 8px;
+    width: 47rem;
+    color: var(--gray-100);
+}
+
+.container button{
+    background-color: transparent;
+    border: none;
+}
+
+.divForm{
+    display: flex;
+}
+
+.checkBox {
+    margin-right: 1rem;
+}
+
+.paragraphFinished {
+    text-decoration: line-through;
+}
+
+.buttonDelete{
+    cursor: pointer;
+    float: right;
+    color: var(--gray-200);
+}
+
+@media(max-width: 768px)
+{
+    .container{
+        width: 28rem;       
+    }
 }

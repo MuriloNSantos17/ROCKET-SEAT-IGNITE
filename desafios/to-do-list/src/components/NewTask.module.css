@@ -42,3 +42,8 @@
     background-color: var(--blue);
     transition: background-color 0.5s;
 }
+
+.buttonAdd:disabled{
+    background-color: var(--gray-500);
+}
+

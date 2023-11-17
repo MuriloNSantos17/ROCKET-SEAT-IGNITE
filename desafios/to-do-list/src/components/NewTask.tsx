@@ -6,7 +6,7 @@ import ListTaks from './ListTask';
 const NewTask = () => {
     const [tasks, setTasks] = useState([{
         id: 1,
-        task: "teste rex"
+        task: "Aprender mais react com T.S"
     }]);
 
     const [data, setData] = useState('');
@@ -26,6 +26,10 @@ const NewTask = () => {
         setData('');
     }
 
+    const deleteTask = (id: number) => {        
+        setTasks(tasks.filter((obj) => obj.id != id));
+    }
+
     return (
         <Fragment>
             <form className={styles.form}>
@@ -35,14 +39,16 @@ const NewTask = () => {
                     className={styles.inputNewTask}
                     placeholder='Adicione uma nova tarefa'
                 />
-                <button className={styles.buttonAdd} onClick={(e) => {
-                    handleAddTask(e);
-                }}>
+                <button
+                    className={styles.buttonAdd}
+                    onClick={handleAddTask}
+                    disabled={data.length == 0 ? true : false}
+                >
                     <PlusCircle size={20} />
                     Criar
                 </button>
             </form>
-            <ListTaks tasks={tasks} />
+            <ListTaks tasks={tasks} deleteTask={deleteTask} />
         </Fragment>
     )
 }
