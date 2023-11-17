@@ -1,6 +1,6 @@
 import { ChangeEvent, useState } from "react";
+import { Trash, Check } from "phosphor-react";
 import styles from './TaksDetail.module.css';
-import { Trash } from "phosphor-react";
 
 interface TaskDetailProps {
     id: number;
@@ -37,7 +37,12 @@ const TaskDetail = ({ id, task, endTask, restartTask, deleteTask }: TaskDetailPr
     return (
         <div className={styles.container}>
             <div className={styles.divForm}>
-                <label className="container">
+                <label className={styles.label}>
+                    <div className={finish ? styles.checkBoxSelected : styles.checkBox}>
+                        {
+                            finish && <Check />
+                        }
+                    </div>
                     <input type="checkbox" onChange={handleCheckTask} />
                     <span className={finish ? styles.paragraphFinished : ''}>{task}</span>
                 </label>

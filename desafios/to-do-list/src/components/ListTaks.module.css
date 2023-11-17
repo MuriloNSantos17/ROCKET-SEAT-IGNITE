@@ -1,4 +1,4 @@
-.divList{
+.divList {
     margin: auto;
     display: flex;
     flex-direction: row;
@@ -8,11 +8,11 @@
     width: 48rem;
 }
 
-.divList p{
+.divList p {
     font-weight: bold;
 }
 
-.divList p span{
+.divList p span {
     margin-left: 0.5rem;
     background-color: var(--gray-400);
     color: var(--gray-200);
@@ -21,10 +21,16 @@
     min-width: 200px;
 }
 
-.createdTask{
+.createdTask {
     color: var(--blue);
 }
 
-.finishedTask{
+.finishedTask {
     color: var(--purple);
+}
+
+@media(max-width: 768px) {
+    .divList {
+        width: 28rem;
+    }
 }
