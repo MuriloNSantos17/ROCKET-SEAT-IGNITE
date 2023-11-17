@@ -11,7 +11,6 @@ interface TaskDetailProps {
 }
 
 const TaskDetail = ({ id, task, endTask, restartTask, deleteTask }: TaskDetailProps) => {
-
     const [finish, setFinish] = useState(false);
 
     const handleCheckTask = (e: ChangeEvent<HTMLInputElement>) => {
@@ -33,7 +32,6 @@ const TaskDetail = ({ id, task, endTask, restartTask, deleteTask }: TaskDetailPr
         deleteTask(id);
     }
 
-
     return (
         <div className={styles.container}>
             <div className={styles.divForm}>
@@ -50,7 +48,6 @@ const TaskDetail = ({ id, task, endTask, restartTask, deleteTask }: TaskDetailPr
             <button title="Deletar">
                 <Trash size={15} className={styles.buttonDelete} onClick={handleDelete} />
             </button>
-
         </div>
     )
 }

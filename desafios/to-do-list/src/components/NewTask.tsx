@@ -1,6 +1,6 @@
-import { PlusCircle } from 'phosphor-react';
-import styles from './NewTask.module.css';
+import { PlusCircle, ClipboardText } from 'phosphor-react';
 import { FormEvent, Fragment, useState } from 'react';
+import styles from './NewTask.module.css';
 import ListTaks from './ListTask';
 
 const NewTask = () => {
@@ -10,7 +10,6 @@ const NewTask = () => {
     }]);
 
     const [data, setData] = useState('');
-
 
     const handleAddTask = (e: FormEvent) => {
         e.preventDefault();
@@ -49,6 +48,18 @@ const NewTask = () => {
                 </button>
             </form>
             <ListTaks tasks={tasks} deleteTask={deleteTask} />
+            {
+                tasks.length == 0 && (
+                    <Fragment>
+                        <hr className={styles.hr}/>
+                        <div className={styles.taskEmpty}>
+                            <ClipboardText size={80} />
+                            <p className={styles.prgDestaque}>Você ainda não tem tarefas cadastradas</p>
+                            <p className={styles.subtitle}>Crie tarefas e organize seus itens a fazer</p>
+                        </div>
+                    </Fragment>
+                )
+            }
         </Fragment>
     )
 }
