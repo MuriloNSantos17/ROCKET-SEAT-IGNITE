@@ -1,6 +1,6 @@
 import { Fragment, useState } from "react";
 import styles from './ListTaks.module.css';
-import TaskDetail from "./Task";
+import TaskDetail from "./TaskDetail";
 
 export interface TasksModel {
     id: number,
@@ -12,10 +12,8 @@ interface TaskProps {
 }
 
 const ListTaks = ({ tasks }: TaskProps) => {
-    const [createdTask, setCreatedTask] = useState(tasks.length);
-    const [finishedTask, setFineshedTask] = useState(0);
 
-    console.log(tasks);
+    const [finishedTask, setFineshedTask] = useState(0);
 
     return (
         <Fragment>
@@ -23,20 +21,20 @@ const ListTaks = ({ tasks }: TaskProps) => {
                 <p className={styles.createdTask}>
                     Tarefas Criadas
                     <span>
-                        {createdTask}
+                        {tasks.length}
                     </span>
                 </p>
                 <p className={styles.finishedTask}>
                     Concluídas
                     <span>
                         {finishedTask} de
-                        {' ' + createdTask}
+                        {' ' + tasks.length}
                     </span>
                 </p>
             </div>
             {
-                tasks.map((item) => {
-                    return <TaskDetail/>
+                tasks.map((item) => {                
+                    return <TaskDetail id={item.id} task={item.task} />
                 })
             }
         </Fragment>

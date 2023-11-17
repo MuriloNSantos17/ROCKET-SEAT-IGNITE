@@ -9,27 +9,33 @@ const NewTask = () => {
         task: "teste rex"
     }]);
 
+    const [data, setData] = useState('');
 
-    const handleAddTask = (e: FormEvent)=>{
+
+    const handleAddTask = (e: FormEvent) => {
         e.preventDefault();
-        
+
         setTasks([
             ...tasks,
             {
                 id: tasks.length + 1,
-                task: 'hahaha'
+                task: data
             }
-        ])
+        ]);
+
+        setData('');
     }
 
     return (
         <Fragment>
             <form className={styles.form}>
                 <input
+                    value={data}
+                    onChange={(e) => { setData(e.target.value) }}
                     className={styles.inputNewTask}
                     placeholder='Adicione uma nova tarefa'
                 />
-                <button className={styles.buttonAdd} onClick={(e)=>{
+                <button className={styles.buttonAdd} onClick={(e) => {
                     handleAddTask(e);
                 }}>
                     <PlusCircle size={20} />
