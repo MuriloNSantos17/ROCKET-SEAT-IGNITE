@@ -36,6 +36,18 @@
     color: var(--gray-200);
 }
 
+.checkbox {
+    border-radius: 100%;
+    height: 1.125rem;
+    width: 1.125rem;
+  
+    transition: 0.2s all;
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
 @media(max-width: 768px)
 {
     .container{

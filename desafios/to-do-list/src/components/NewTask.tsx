@@ -26,7 +26,7 @@ const NewTask = () => {
         setData('');
     }
 
-    const deleteTask = (id: number) => {        
+    const deleteTask = (id: number) => {
         setTasks(tasks.filter((obj) => obj.id != id));
     }
 

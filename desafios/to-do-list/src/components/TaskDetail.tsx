@@ -37,10 +37,10 @@ const TaskDetail = ({ id, task, endTask, restartTask, deleteTask }: TaskDetailPr
     return (
         <div className={styles.container}>
             <div className={styles.divForm}>
-                <input type="checkbox" onChange={handleCheckTask} />
-                <p className={finish ? styles.paragraphFinished : ''}>
-                    {task}
-                </p>
+                <label className="container">
+                    <input type="checkbox" onChange={handleCheckTask} />
+                    <span className={finish ? styles.paragraphFinished : ''}>{task}</span>
+                </label>
             </div>
             <button title="Deletar">
                 <Trash size={15} className={styles.buttonDelete} onClick={handleDelete} />
