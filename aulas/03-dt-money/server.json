@@ -1,0 +1,76 @@
+{
+  "transactions": [
+    {
+      "id": 1,
+      "description": "Desenvolvimento de site",
+      "type": "income",
+      "category": "Venda",
+      "price": 14000,
+      "createdAt": "2024-02-14T17:17:51.057Z"
+    },
+    {
+      "id": 2,
+      "description": "Mc Donalds",
+      "type": "outcome",
+      "category": "Alimentação",
+      "price": 50,
+      "createdAt": "2024-02-14T17:17:51.057Z"
+    },
+    {
+      "id": 3,
+      "description": "Burger King",
+      "type": "outcome",
+      "category": "Alimentação",
+      "price": 50,
+      "createdAt": "2024-02-14T17:17:51.057Z"
+    },
+    {
+      "id": 4,
+      "description": "Desenvolvimento de APP",
+      "type": "income",
+      "category": "Venda",
+      "price": 2000,
+      "createdAt": "2024-02-14T17:17:51.057Z"
+    },
+    {
+      "description": "CGM",
+      "category": "Dev",
+      "price": 5000,
+      "type": "income",
+      "createdAt": "2024-02-14T18:43:08.020Z",
+      "id": 5
+    },
+    {
+      "description": "Pastel",
+      "category": "Alimentação",
+      "price": 5,
+      "type": "outcome",
+      "createdAt": "2024-02-14T18:46:14.792Z",
+      "id": 6
+    },
+    {
+      "description": "Cinema",
+      "category": "Diversão",
+      "price": 50,
+      "type": "outcome",
+      "createdAt": "2024-02-14T18:51:23.223Z",
+      "id": 7
+    },
+    {
+      "description": "Cinema2",
+      "category": "Diversão",
+      "price": 20,
+      "type": "outcome",
+      "createdAt": "2024-02-14T18:54:03.746Z",
+      "id": 8
+    },
+    {
+      "description": "Iogurte",
+      "category": "Alimentação",
+      "price": 4,
+      "type": "income",
+      "createdAt": "2024-02-14T18:55:14.578Z",
+      "id": 9
+    }
+  ]
+}
