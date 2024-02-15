@@ -1,14 +1,16 @@
 import { PricheHightLight, TransactionsContainer, TransactionsTable } from './index.ts';
 import { TransactionsContext } from '../../contexts/TransactionsContext.tsx';
+import { dateFormatter, priceFormater } from '../../utils/formatter.ts';
 import { SearchForm } from './components/SearchForm/index.tsx';
 import { Summary } from '../../components/Summary/index.tsx';
 import { Header } from '../../components/Header/index.tsx';
-import { useContext } from 'react';
-import { dateFormatter, priceFormater } from '../../utils/formatter.ts';
+import { useContextSelector } from 'use-context-selector';
 
 export function Transactions() {
-    const { transactions } = useContext(TransactionsContext);
-    
+    const transactions = useContextSelector(TransactionsContext, (context) => {
+        return context.transactions;
+    });
+
     return (
         <div>
             <Header />
