@@ -7,20 +7,20 @@ import { z } from 'zod'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 
-const signInForm = z.object({
+const signUpForm = z.object({
   email: z.string().email(),
 })
 
-type SignInForm = z.infer<typeof signInForm>
+type SignUpForm = z.infer<typeof signUpForm>
 
-export function SignIn() {
+export function SignUp() {
   const {
     register,
     handleSubmit,
     formState: { isSubmitting },
-  } = useForm<SignInForm>()
+  } = useForm<SignUpForm>()
 
-  async function handleSignIn(data: SignInForm) {
+  async function handleSignUp(data: SignUpForm) {
     console.log(data)
     await new Promise((resolve) => setTimeout(resolve, 2000))
 
@@ -28,8 +28,8 @@ export function SignIn() {
       action: {
         label: 'reenviar',
         onClick: () => {
-          handleSignIn(data)
-          handleSignIn(data)
+          handleSignUp(data)
+          handleSignUp(data)
         },
       },
     })
@@ -48,7 +48,7 @@ export function SignIn() {
               Acompanhe suas vendas pelo painel do parceiro
             </p>
           </div>
-          <form className="space-y-4" onSubmit={handleSubmit(handleSignIn)}>
+          <form className="space-y-4" onSubmit={handleSubmit(handleSignUp)}>
             <div className="space-y-2">
               <Label htmlFor="email">Seu E-mail</Label>
               <Input id="email" type="email" {...register('email')} />
