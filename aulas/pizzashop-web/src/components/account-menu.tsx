@@ -1,6 +1,6 @@
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from "./ui/dropdown-menu";
 import { Building, ChevronDown, LogOut } from "lucide-react";
-import { useQuery } from "@tanstack/react-query";
+import { useMutation, useQuery } from "@tanstack/react-query";
 import { getProfile } from "@/api/get-profile";
 import { Button } from "./ui/button";
 import { getManagementRestaurant } from "@/api/get-management-restaurant";
@@ -8,8 +8,11 @@ import { Skeleton } from "./ui/skeleton";
 import { Fragment } from "react";
 import { Dialog, DialogTrigger } from "./ui/dialog";
 import { StoreProfileDialog } from "./store-profile.dialog";
+import { SignOut } from "@/api/sign-out";
+import { useNavigate } from "react-router-dom";
 
 export function AccountMenu() {
+    const navigate = useNavigate();
 
     const { data: profile, isLoading: isLoadingProfile } = useQuery({
         queryKey: ['profile'],
@@ -21,6 +24,13 @@ export function AccountMenu() {
         queryKey: ['managed-restaurant'],
         queryFn: getManagementRestaurant,
         staleTime: Infinity
+    })
+
+    const { mutateAsync: SignOutFn, isPending: isSigningOut } = useMutation({
+        mutationFn: SignOut,
+        onSuccess: () => {
+            navigate("/sign-in", { replace: true })
+        }
     })
 
     return (
@@ -55,9 +65,11 @@ export function AccountMenu() {
                             <span>Perfil da Loja</span>
                         </DropdownMenuItem>
                     </DialogTrigger>
-                    <DropdownMenuItem className="text-rose-500 dark:text-rose-400">
-                        <LogOut className="mr-2 h-4 w-4" />
-                        <span>Sair</span>
+                    <DropdownMenuItem asChild className="text-rose-500 dark:text-rose-400" disabled={isSigningOut}>
+                        <button onClick={() => { SignOutFn() }}>
+                            <LogOut className="mr-2 h-4 w-4" />
+                            <span>Sair</span>
+                        </button>
                     </DropdownMenuItem>
                 </DropdownMenuContent>
             </DropdownMenu>
