@@ -1,7 +1,14 @@
+import { getMonthRevenue } from "@/api/get-month-revenue";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { useQuery } from "@tanstack/react-query";
 import { DollarSign } from "lucide-react";
 
 export function MonthRevenueCard() {
+    const { data: monthRenevueOrder } = useQuery({
+        queryFn: getMonthRevenue,
+        queryKey: ['metrics', 'month-revenue']
+    })
+
     return (
         <Card>
             <CardHeader className='flex items-center justify-between pb-2 flex-row space-y-0'>
@@ -9,12 +16,35 @@ export function MonthRevenueCard() {
                 <DollarSign className='h-4 w-4 text-muted-foreground' />
             </CardHeader>
             <CardContent className='space-y-1'>
-                <span className='text-2xl font-bold tracking-tight'>
-                    R$ 1248,60
-                </span>
-                <p className='text-xs text-muted-foreground'>
-                    <span className='text-emerald-500 dark:text-emerald-400'>2%</span> em relação ao mês passado
-                </p>
+                {monthRenevueOrder && (
+                    <>
+                        <span className='text-2xl font-bold tracking-tight'>
+                            {(monthRenevueOrder.receipt / 100).toLocaleString('pt-BR',{
+                                style: 'currency',
+                                currency: 'BRL'
+                            })}
+                        </span>
+                        <p className='text-xs text-muted-foreground'>
+                            {monthRenevueOrder.diffFromLastMonth >= 0 ?
+                                (
+                                    <>
+                                        <span className='text-emerald-500 dark:text-emerald-400'>
+                                            +{monthRenevueOrder.diffFromLastMonth}
+                                        </span>{' '}
+                                        % em relação a ontem
+                                    </>
+                                ) : (
+                                    <>
+                                        <span className='text-rose-500 dark:text-rose-400'>
+                                            {monthRenevueOrder.diffFromLastMonth}
+                                        </span>{' '}
+                                        % em relação a ontem
+                                    </>
+                                )
+                            }
+                        </p>
+                    </>
+                )}
             </CardContent>
         </Card>
     )
