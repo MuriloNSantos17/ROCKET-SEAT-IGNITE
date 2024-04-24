@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "test": "vitest"
+    "test": "vitest",
+    "dev:test": "vite --port 50741 --mode test"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.3.4",
@@ -44,6 +45,7 @@
     "@rocketseat/eslint-config": "^2.2.2",
     "@testing-library/jest-dom": "^6.4.2",
     "@testing-library/react": "^15.0.3",
+    "@testing-library/user-event": "^14.5.2",
     "@types/node": "^20.11.19",
     "@types/react": "^18.2.55",
     "@types/react-dom": "^18.2.19",
@@ -51,6 +53,7 @@
     "autoprefixer": "^10.4.17",
     "eslint": "^8.56.0",
     "eslint-plugin-simple-import-sort": "^12.0.0",
+    "msw": "^2.2.14",
     "postcss": "^8.4.35",
     "prettier": "^3.2.5",
     "prettier-plugin-tailwindcss": "^0.5.11",
@@ -58,5 +61,10 @@
     "typescript": "^5.2.2",
     "vite": "^5.1.0",
     "vitest": "^1.5.0"
+  },
+  "msw": {
+    "workerDirectory": [
+      "public"
+    ]
   }
 }

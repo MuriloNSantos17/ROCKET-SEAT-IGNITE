@@ -1,7 +1,7 @@
 import { api } from "@/lib/axios"
 
 export interface GetOrderDetailsParams {
-    orderId: String
+    orderId: string
 }
 
 export interface GetOrderDetailsResponse {
