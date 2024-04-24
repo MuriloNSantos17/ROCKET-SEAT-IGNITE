@@ -20,6 +20,8 @@ export function AppLayout() {
           } else {
             throw error;
           }
+        }else{
+          throw error
         }
       }
     )

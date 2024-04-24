@@ -56,7 +56,7 @@ export function SignIn() {
       <div className="p-8">
         <Button asChild className="absolute right-4 top-8" variant={'ghost'}>
           <Link to={"/sign-up"}>
-            Novo Estabelecimento
+            Novo estabelecimento
           </Link>
         </Button>
         <div className="flex w-[350px] flex-col justify-center gap-6">
