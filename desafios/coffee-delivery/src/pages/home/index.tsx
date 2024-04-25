@@ -22,9 +22,9 @@ export function Home() {
                     <img src={logoCoffee} className='mr-auto' />
                 </div>
             </div>
-            <div className='base-background'>
+            <div className='base-background flex flex-col gap-10'>
                 <h2 className='ml-[104px] text-[30px] font-bold subtitle mb-10'>Nossos cafés</h2>
-                <div className='flex gap-4 justify-center px-10'>
+                <div className='flex gap-4 justify-start px-10'>
                     <CardProduct
                         type='tradicional'
                         name='Expresso Tradicional'
@@ -38,9 +38,9 @@ export function Home() {
                         }
                     />
                     <CardProduct
-                        type='tradicional'
-                        name='Expresso Tradicional'
-                        description='O tradicional café feito com água quente e grãos moídos'
+                        type='americano'
+                        name='Expresso Americano'
+                        description='Expresso diluíduo, menos intenso que o tradicional'
                         categorias={
                             [
                                 {
@@ -50,9 +50,9 @@ export function Home() {
                         }
                     />
                     <CardProduct
-                        type='tradicional'
-                        name='Expresso Tradicional'
-                        description='O tradicional café feito com água quente e grãos moídos'
+                        type='cremoso'
+                        name='Expresso Cremoso'
+                        description='Café expresso tradicional com espuma cremosa'
                         categorias={
                             [
                                 {
@@ -62,18 +62,176 @@ export function Home() {
                         }
                     />
                     <CardProduct
-                        type='tradicional'
-                        name='Expresso Tradicional'
-                        description='O tradicional café feito com água quente e grãos moídos'
+                        type='gelado'
+                        name='Expresso Gelado'
+                        description='Bebida preparada com café expresso e cubos de gelo'
                         categorias={
                             [
                                 {
                                     category: 'TRADICIONAL'
+                                },
+                                {
+                                    category: 'GELADO'
                                 }
                             ]
                         }
                     />
 
+                </div>
+                <div className='flex gap-4 justify-start px-10'>
+                    <CardProduct
+                        type='leite'
+                        name='Café com Leite'
+                        description='Meio a meio de expresso tradicional com leite vaporizado'
+                        categorias={
+                            [
+                                {
+                                    category: 'TRADICIONAL'
+                                },
+                                {
+                                    category: 'COM LEITE'
+                                }
+                            ]
+                        }
+                    />
+                    <CardProduct
+                        type='latte'
+                        name='Latte'
+                        description='Uma dose de café expresso com o dobro de leite e espuma cremosa'
+                        categorias={
+                            [
+                                {
+                                    category: 'TRADICIONAL'
+                                },
+                                {
+                                    category: 'COM LEITE'
+                                }
+                            ]
+                        }
+                    />
+                    <CardProduct
+                        type='capuccino'
+                        name='Capuccino'
+                        description='Bebida com cancela feita de doses iguais de café, leite e espuma'
+                        categorias={
+                            [
+                                {
+                                    category: 'TRADICIONAL'
+                                },
+                                {
+                                    category: 'COM LEITE'
+                                }
+                            ]
+                        }
+                    />
+                    <CardProduct
+                        type='macchiato'
+                        name='Macchiato'
+                        description='Café expresso misturado com um pouco de leite quente e espuma'
+                        categorias={
+                            [
+                                {
+                                    category: 'TRADICIONAL'
+                                },
+                                {
+                                    category: 'COM LEITE'
+                                }
+                            ]
+                        }
+                    />
+
+                </div>
+                <div className='flex gap-4 justify-start px-10'>
+                    <CardProduct
+                        type='mocaccino'
+                        name='Mocaccino'
+                        description='Café expresso com calda de chocolate, pouco leite e espuma'
+                        categorias={
+                            [
+                                {
+                                    category: 'TRADICIONAL'
+                                },
+                                {
+                                    category: 'COM LEITE'
+                                }
+                            ]
+                        }
+                    />
+                    <CardProduct
+                        type='chocolate'
+                        name='Chocolate Quente'
+                        description='Bebida feita com chocolate dissolvido no leite quente e café'
+                        categorias={
+                            [
+                                {
+                                    category: 'ESPECIAL'
+                                },
+                                {
+                                    category: 'COM LEITE'
+                                }
+                            ]
+                        }
+                    />
+                    <CardProduct
+                        type='cubano'
+                        name='Cubano'
+                        description='Drink gelado de café expresso com rum, creme de leite e hortelã'
+                        categorias={
+                            [
+                                {
+                                    category: 'ESPECIAL'
+                                },
+                                {
+                                    category: 'ALCOÓLICO'
+                                },
+                                {
+                                    category: 'GELADO'
+                                }
+                            ]
+                        }
+                    />
+                    <CardProduct
+                        type='havaiano'
+                        name='Havaiano'
+                        description='Bebida adocicada preparada com café e leite de coco'
+                        categorias={
+                            [
+                                {
+                                    category: 'ESPECIAL'
+                                },                                
+                            ]
+                        }
+                    />
+
+                </div>
+                <div className='flex gap-4 justify-start px-10 mb-10'>
+                    <CardProduct
+                        type='arabe'
+                        name='Árabe'
+                        description='Bebida preparada com grãos de café árabe e especiarias'
+                        categorias={
+                            [
+                                {
+                                    category: 'ESPECIAL'
+                                },                                
+                            ]
+                        }
+                    />
+                    <CardProduct
+                        type='irlandes'
+                        name='Irlandês'
+                        description='Bebida a base de café, uísque irlandês, açúcar e chantily'
+                        categorias={
+                            [
+                                {
+                                    category: 'ESPECIAL'
+                                },
+                                {
+                                    category: 'ALCOÓLICO'
+                                }
+                            ]
+                        }
+                    />
                 </div>
             </div>
         </div>
