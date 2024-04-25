@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*,
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Inter", sans-serif;
+}
+
+.base-background{
+    background-color: #FAFAFA;
+}
+
+.title {
+    color: #272221
+}
+
+.subtitle {
+    color: #403937
+}
+
+.base-text {
+    color: #403937
+}
+
+.text-stroke{
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke: revert-layer;
+
+    font-weight: 900;
+}
