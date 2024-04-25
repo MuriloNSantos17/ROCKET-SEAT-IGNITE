@@ -31,3 +31,7 @@ body {
 
     font-weight: 900;
 }
+
+.divRadius{
+    border-radius: 6px 36px 6px 36px;
+}

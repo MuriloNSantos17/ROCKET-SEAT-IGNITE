@@ -52,7 +52,7 @@ export function CardProduct(card: CardProductProps) {
     const [quantity, setQuantity] = useState(0);
 
     return (
-        <div className="bg-[#F3F2F2] flex flex-col gap-2 px-8 justify-center max-w-[350px] w-[350px]">
+        <div className="bg-[#F3F2F2] flex flex-col gap-2 px-8 justify-center max-w-[350px] w-[350px] divRadius">
             <img
                 className='mt-[-25px] h-[150px]'
                 src={returnSrc(card.type)}
