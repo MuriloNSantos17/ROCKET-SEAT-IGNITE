@@ -39,3 +39,17 @@ h1, h2{
 .divRadius{
     border-radius: 6px 36px 6px 36px;
 }
+
+.input{
+    background-color: #EDEDED;
+    outline: none;
+    border-radius: 4px;
+    height: 42px;
+    color: #574F4D;
+    padding-left: 0.5rem;
+}
+
+.input:focus{
+    outline: auto;
+    outline-color: #C47F17;
+}
