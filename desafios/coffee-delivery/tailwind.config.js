@@ -6,7 +6,11 @@ export default {
   ],
   theme: {
     screens:{
-      'sm32': '320px'
+      'sm32': '320px',
+      'sm39': '390px',
+      'sm60': '600px',
+      'xl': '1280px',
+      '2xl': '1920px',
     },
     extend: {},
   },

@@ -1,4 +1,5 @@
 import { ShoppingCart } from "@phosphor-icons/react"
+import { Link, } from "react-router-dom"
 
 export interface CardCartProps {
     variant: 'Y' | 'P'
@@ -6,12 +7,23 @@ export interface CardCartProps {
 
 export function CardCart(card: CardCartProps) {
     return (
-        <div className={`w-[38px] h-[38px] flex flex-col justify-center items-center rounded-[8px] ${card.variant == 'Y' ? "bg-[#F1E9C9]" : 'bg-[#4B2995]'}`}>
-            <ShoppingCart
-                weight="fill"
-                color={card.variant == 'Y' ? '#C47F17' : 'white'}
-                size={24}
-            />
-        </div>
+        card.variant == 'Y' ?
+            <Link to={'/cart'}>
+                <div className={`w-[38px] h-[38px] flex flex-col justify-center items-center rounded-[8px] bg-[#F1E9C9]`}>
+                    <ShoppingCart
+                        weight="fill"
+                        color={'#C47F17'}
+                        size={24}
+                    />
+                </div >
+            </Link>
+            :
+            <div className={`w-[38px] h-[38px] flex flex-col justify-center items-center rounded-[8px] bg-[#4B2995]`}>
+                <ShoppingCart
+                    weight="fill"
+                    color={'white'}
+                    size={24}
+                />
+            </div>
     )
 }

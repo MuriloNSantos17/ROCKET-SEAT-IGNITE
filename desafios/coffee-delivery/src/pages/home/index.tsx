@@ -5,15 +5,15 @@ import logoCoffee from '../../images/image-coffe-delivery.svg';
 export function Home() {
     return (
         <div className='flex flex-col'>
-            <div className="p-[104px] h-[544px] base-background flex justify-between">
-                <div className='flex flex-col gap-[32px]'>
-                    <h1 className="title font-extrabold text-[40px] text-stroke">Encontre o café perfeito<br />para qualquer hora do dia</h1>
-                    <p>Com o Coffee Delivery você recebe seu café onde estiver, a<br /> qualquer hora</p>
-                    <div className='flex gap-6'>
+            <div className="p-[104px] h-[544px] base-background flex justify-between sm32:h-[auto]  sm32:p-[2px] sm32:mt-28 sm32:flex-col-reverse sm60:flex-row xl:p-[104px]">
+                <div className='flex flex-col gap-[32px] sm32:p-2 sm32:gap-4'>
+                    <h1 className="title font-extrabold text-[50px] text-stroke">Encontre o café perfeito<br />para qualquer hora do dia</h1>
+                    <p>Com o Coffee Delivery você recebe seu café onde estiver, a qualquer hora!</p>
+                    <div className='flex gap-6 sm32:flex-col sm32:gap-2 xl:flex-row xl:gap-6'>
                         <CardItem variant='cart' item='Compra simples e segura' />
                         <CardItem variant='box' item='Embalagem mantém o café intacto' />
                     </div>
-                    <div className='flex gap-4'>
+                    <div className='flex gap-4 sm32:flex-col sm32:gap-2 xl:flex-row xl:gap-4'>
                         <CardItem variant='timer' item='Entrega rápida e rastreada' />
                         <CardItem variant='coffee' item='O café chega fresquinho até você' />
                     </div>
@@ -23,8 +23,8 @@ export function Home() {
                 </div>
             </div>
             <div className='base-background flex flex-col gap-10'>
-                <h2 className='ml-[104px] text-[30px] font-bold subtitle mb-10'>Nossos cafés</h2>
-                <div className='flex gap-4 justify-start px-10'>
+                <h2 className='ml-[104px] text-[30px] font-bold subtitle mb-10 sm32:mb-2 sm32:text-center sm32:ml-0 xl:text-left xl:ml-[104px]'>Nossos cafés</h2>
+                <div className='flex gap-4 justify-start px-10 sm32:flex-col sm32:px-2 sm32:gap-8 sm60:flex-row sm60:flex-wrap sm60:justify-center'>
                     <CardProduct
                         type='tradicional'
                         name='Expresso Tradicional'
@@ -78,7 +78,7 @@ export function Home() {
                     />
 
                 </div>
-                <div className='flex gap-4 justify-start px-10'>
+                <div className='flex gap-4 justify-start px-10 sm32:flex-col sm32:px-2 sm32:gap-8 sm60:flex-row sm60:flex-wrap sm60:justify-center'>
                     <CardProduct
                         type='leite'
                         name='Café com Leite'
@@ -141,7 +141,7 @@ export function Home() {
                     />
 
                 </div>
-                <div className='flex gap-4 justify-start px-10'>
+                <div className='flex gap-4 justify-start px-10 sm32:flex-col sm32:px-2 sm32:gap-8 sm60:flex-row sm60:flex-wrap sm60:justify-center'>
                     <CardProduct
                         type='mocaccino'
                         name='Mocaccino'
@@ -198,13 +198,13 @@ export function Home() {
                             [
                                 {
                                     category: 'ESPECIAL'
-                                },                                
+                                },
                             ]
                         }
                     />
 
                 </div>
-                <div className='flex gap-4 justify-start px-10 mb-10'>
+                <div className='flex gap-4 justify-start px-10 mb-10 sm32:flex-col sm32:px-2 sm32:gap-8 sm60:flex-row sm60:flex-wrap sm60:justify-center'>
                     <CardProduct
                         type='arabe'
                         name='Árabe'
@@ -213,7 +213,7 @@ export function Home() {
                             [
                                 {
                                     category: 'ESPECIAL'
-                                },                                
+                                },
                             ]
                         }
                     />
@@ -235,7 +235,5 @@ export function Home() {
                 </div>
             </div>
         </div>
-
-
     )
 }
