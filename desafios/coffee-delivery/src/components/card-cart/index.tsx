@@ -1,11 +1,18 @@
 import { ShoppingCart } from "@phosphor-icons/react"
+import { useContext } from "react"
 import { Link, } from "react-router-dom"
+import { ProductContext } from "../../layout"
 
 export interface CardCartProps {
     variant: 'Y' | 'P'
 }
 
 export function CardCart(card: CardCartProps) {
+
+    const data = useContext(ProductContext);
+
+    console.log(data);
+    
     return (
         card.variant == 'Y' ?
             <Link to={'/cart'}>
