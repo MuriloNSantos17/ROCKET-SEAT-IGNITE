@@ -5,7 +5,7 @@ import logoCoffee from '../../images/image-coffe-delivery.svg';
 export function Home() {
     return (
         <div className='flex flex-col'>
-            <div className="p-[104px] h-[544px] base-background flex justify-between sm32:h-[auto] sm32:p-[2px] sm32:mt-28 sm32:flex-col-reverse sm60:flex-row sm60:mt-4 xl:p-[104px]">
+            <div className="p-[104px] h-[544px] base-background flex justify-between sm32:h-[auto] sm32:p-[2px] sm32:mt-28 sm32:flex-col-reverse sm60:flex-row sm60:mt-28 xl:mt-4 xl:p-[104px]">
                 <div className='flex flex-col gap-[32px] sm32:p-2 sm32:gap-4'>
                     <h1 className="title font-extrabold text-[50px] text-stroke">Encontre o café perfeito<br />para qualquer hora do dia</h1>
                     <p>Com o Coffee Delivery você recebe seu café onde estiver, a qualquer hora!</p>
