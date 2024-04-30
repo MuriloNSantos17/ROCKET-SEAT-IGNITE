@@ -33,14 +33,14 @@ export const ProductDetails = styled('div', {
         color: '$gray300'
     },
 
-    span:{
+    span: {
         marginTop: '1rem',
         display: 'block',
         fontSize: '$2xl',
         color: '$green300'
     },
 
-    p:{
+    p: {
         marginTop: '2.5rem',
         fontSize: '$md',
         lineHeight: 1.6,
@@ -57,9 +57,14 @@ export const ProductDetails = styled('div', {
         cursor: 'pointer',
         fontWeight: 'bold',
         fontSize: '$md',
-        
-        '&:hover':{
-            backgroundColor:'$green300'
-        }
+
+        '&:disabled': {
+            opacity: 0.6,
+            cursor: 'not-allowed'
+        },
+
+        '&:not(:disabled):hover': {
+            backgroundColor: '$green300'
+        },
     }
 })
