@@ -1,15 +1,17 @@
+import { imgFrom } from "../components/card-product";
 import { createContext, useState } from "react";
 import { Header } from "../components/header";
 import { Outlet } from "react-router-dom";
 
 export interface ProductOnCart {
     name: string,
-    quantity: number
+    quantity: number,
+    type: imgFrom
 }
 
 export interface ProductContextInterface {
     produtos: ProductOnCart[],
-    setProdutos: (data: ProductOnCart) => void
+    setProdutos: (data: ProductOnCart[]) => void
 }
 
 export const ProductContext = createContext<ProductContextInterface>({ produtos: [], setProdutos: () => { } });
@@ -19,7 +21,7 @@ export function DefaultLayout() {
 
     return (
         <ProductContext.Provider value={{ produtos, setProdutos }}>
-            <Header />
+            <Header/>
             <Outlet />
         </ProductContext.Provider>
     )

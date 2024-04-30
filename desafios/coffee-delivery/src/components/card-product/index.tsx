@@ -13,14 +13,15 @@ import imgLeite from '../../images/leite.svg'
 import imgLatte from '../../images/latte.svg'
 import imgArabe from '../../images/arabe.svg'
 import { CardCart } from '../card-cart';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+import { ProductContext } from '../../layout';
 
 interface CoffeCategory {
     category: string
 }
 
-type imgFrom = 'tradicional' | 'americano' | 'cremoso' | 'gelado' |
-    'leite' | 'latte' | 'capuccino' | 'macchiato' | 'mocaccino'|
+export type imgFrom = 'tradicional' | 'americano' | 'cremoso' | 'gelado' |
+    'leite' | 'latte' | 'capuccino' | 'macchiato' | 'mocaccino' |
     'chocolate' | 'cubano' | 'havaiano' | 'arabe' | 'irlandes'
 
 interface CardProductProps {
@@ -49,7 +50,12 @@ function returnSrc(type: imgFrom) {
 
 export function CardProduct(card: CardProductProps) {
     const { categorias } = card
-    const [quantity, setQuantity] = useState(0);
+    const data = useContext(ProductContext);
+    const { produtos } = data;
+    const index = produtos.findIndex(obj => obj.type == card.type);
+
+    const [quantity, setQuantity] = useState(
+        index == -1 ? 0 : produtos[index].quantity);
 
     return (
         <div className="bg-[#F3F2F2] flex flex-col gap-2 px-8 justify-center 
@@ -98,7 +104,12 @@ export function CardProduct(card: CardProductProps) {
                         +
                     </div>
                 </div>
-                <CardCart variant='P' />
+                <CardCart
+                    variant='P'
+                    quantity={quantity}
+                    name={card.name}
+                    type={card.type}
+                />
             </div>
         </div>
     );
