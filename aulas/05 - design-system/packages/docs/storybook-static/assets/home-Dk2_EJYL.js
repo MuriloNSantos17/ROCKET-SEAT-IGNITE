@@ -1,0 +1,3 @@
+import{j as t}from"./jsx-runtime-BZf_YgVj.js";import{useMDXComponents as e}from"./index-BwF_zu8I.js";import{M as i}from"./chunk-HLWAVYOI-CdtghFY1.js";import"./index-CEThVCg_.js";import"./iframe-Dmkqf_po.js";import"../sb-preview/runtime.js";import"./react-18-Gg9GpqOs.js";import"./index-5YtWdR9a.js";import"./index-DXimoRZY.js";import"./index-9UrncIcR.js";import"./index-DrFu-skq.js";function r(o){const n={h1:"h1",p:"p",...e(),...o.components};return t.jsxs(t.Fragment,{children:[t.jsx(i,{title:"Home"}),`
+`,t.jsx(n.h1,{id:"murilo-ui",children:"Murilo UI"}),`
+`,t.jsx(n.p,{children:"Design System do Murilo UI"})]})}function h(o={}){const{wrapper:n}={...e(),...o.components};return n?t.jsx(n,{...o,children:t.jsx(r,{...o})}):r(o)}export{h as default};

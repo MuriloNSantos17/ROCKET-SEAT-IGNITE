@@ -1,0 +1,4 @@
+import{j as t}from"./jsx-runtime-BZf_YgVj.js";import{useMDXComponents as n}from"./index-BwF_zu8I.js";import{M as s}from"./chunk-HLWAVYOI-CdtghFY1.js";import{T as e}from"./TokensGrid-CFT4qMKM.js";import{r as m}from"./index-FQKkaq7x.js";import"./index-CEThVCg_.js";import"./iframe-Dmkqf_po.js";import"../sb-preview/runtime.js";import"./react-18-Gg9GpqOs.js";import"./index-5YtWdR9a.js";import"./index-DXimoRZY.js";import"./index-9UrncIcR.js";import"./index-DrFu-skq.js";function r(o){const i={h1:"h1",p:"p",...n(),...o.components};return t.jsxs(t.Fragment,{children:[t.jsx(s,{title:"Tokens/Radii"}),`
+`,t.jsx(i.h1,{id:"radii",children:"Radii"}),`
+`,t.jsx(i.p,{children:"Essas são os radii utilizadas no Murilo UI"}),`
+`,t.jsx(e,{tokens:m,hasRemValue:!0})]})}function C(o={}){const{wrapper:i}={...n(),...o.components};return i?t.jsx(i,{...o,children:t.jsx(r,{...o})}):r(o)}export{C as default};

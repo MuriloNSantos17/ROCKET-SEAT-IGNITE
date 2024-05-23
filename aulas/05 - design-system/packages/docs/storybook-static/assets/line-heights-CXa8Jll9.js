@@ -1,0 +1,4 @@
+import{j as t}from"./jsx-runtime-BZf_YgVj.js";import{useMDXComponents as i}from"./index-BwF_zu8I.js";import{M as r}from"./chunk-HLWAVYOI-CdtghFY1.js";import{T as s}from"./TokensGrid-CFT4qMKM.js";import{l as m}from"./index-FQKkaq7x.js";import"./index-CEThVCg_.js";import"./iframe-Dmkqf_po.js";import"../sb-preview/runtime.js";import"./react-18-Gg9GpqOs.js";import"./index-5YtWdR9a.js";import"./index-DXimoRZY.js";import"./index-9UrncIcR.js";import"./index-DrFu-skq.js";function e(o){const n={h1:"h1",p:"p",...i(),...o.components};return t.jsxs(t.Fragment,{children:[t.jsx(r,{title:"Tokens/Line Height"}),`
+`,t.jsx(n.h1,{id:"line-heights",children:"Line Heights"}),`
+`,t.jsx(n.p,{children:"Essas são os radii utilizadas no Murilo UI"}),`
+`,t.jsx(s,{tokens:m,hasRemValue:!0})]})}function C(o={}){const{wrapper:n}={...i(),...o.components};return n?t.jsx(n,{...o,children:t.jsx(e,{...o})}):e(o)}export{C as default};

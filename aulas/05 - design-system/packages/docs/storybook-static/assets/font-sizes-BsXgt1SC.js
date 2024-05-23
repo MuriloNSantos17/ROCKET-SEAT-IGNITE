@@ -1,0 +1,4 @@
+import{j as o}from"./jsx-runtime-BZf_YgVj.js";import{useMDXComponents as e}from"./index-BwF_zu8I.js";import{M as r}from"./chunk-HLWAVYOI-CdtghFY1.js";import{T as i}from"./TokensGrid-CFT4qMKM.js";import{f as m}from"./index-FQKkaq7x.js";import"./index-CEThVCg_.js";import"./iframe-Dmkqf_po.js";import"../sb-preview/runtime.js";import"./react-18-Gg9GpqOs.js";import"./index-5YtWdR9a.js";import"./index-DXimoRZY.js";import"./index-9UrncIcR.js";import"./index-DrFu-skq.js";function s(t){const n={h1:"h1",p:"p",...e(),...t.components};return o.jsxs(o.Fragment,{children:[o.jsx(r,{title:"Tokens/Font Sizes"}),`
+`,o.jsx(n.h1,{id:"font-sizes",children:"Font Sizes"}),`
+`,o.jsx(n.p,{children:"Essas são os espaços utilizadas no Murilo UI"}),`
+`,o.jsx(i,{tokens:m,hasRemValue:!0})]})}function C(t={}){const{wrapper:n}={...e(),...t.components};return n?o.jsx(n,{...t,children:o.jsx(s,{...t})}):s(t)}export{C as default};
