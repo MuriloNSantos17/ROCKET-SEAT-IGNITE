@@ -1,0 +1,18 @@
+
+> @murilo-nsantos-ui/react@1.0.0 build
+> tsup src/index.tsx --format esm,cjs --dts --external react
+
+[34mCLI[39m Building entry: src/index.tsx
+[34mCLI[39m Using tsconfig: tsconfig.json
+[34mCLI[39m tsup v8.0.2
+[34mCLI[39m Target: es6
+[34mESM[39m Build start
+[34mCJS[39m Build start
+[32mESM[39m [1mdist\index.mjs [22m[32m2.81 KB[39m
+[32mESM[39m ⚡️ Build success in 109ms
+[32mCJS[39m [1mdist\index.js [22m[32m3.72 KB[39m
+[32mCJS[39m ⚡️ Build success in 110ms
+[34mDTS[39m Build start
+[32mDTS[39m ⚡️ Build success in 2763ms
+[32mDTS[39m [1mdist\index.d.mts [22m[32m5.50 KB[39m
+[32mDTS[39m [1mdist\index.d.ts  [22m[32m5.50 KB[39m
