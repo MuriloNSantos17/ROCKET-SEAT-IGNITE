@@ -11,5 +11,8 @@
   "scripts": {
     "dev": "turbo run dev --parallel",
     "build": "turbo run build"
+  },
+  "dependencies": {
+    "phosphor-react": "^1.4.1"
   }
 }

@@ -9,15 +9,18 @@
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "dev": "storybook dev -p 6006",
+    "deploy-storybook": "storybook-to-ghpages",
     "build": "storybook build"
   },
   "dependencies": {
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
+    "@murilo-nsantos-ui/eslint-config": "*",
     "@murilo-nsantos-ui/react": "*",
     "@murilo-nsantos-ui/tokens": "*",
-    "@murilo-nsantos-ui/eslint-config": "*",
-    "@murilo-nsantos-ui/ts-config": "*"
+    "@murilo-nsantos-ui/ts-config": "*",
+    "@storybook/addon-a11y": "^8.1.5",
+    "phosphor-react": "^1.4.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^1.4.0",
@@ -28,6 +31,7 @@
     "@storybook/blocks": "^8.1.1",
     "@storybook/react": "^8.1.1",
     "@storybook/react-vite": "^8.1.1",
+    "@storybook/storybook-deployer": "^2.8.16",
     "@storybook/test": "^8.1.1",
     "@types/react": "^18.2.66",
     "@types/react-dom": "^18.2.22",

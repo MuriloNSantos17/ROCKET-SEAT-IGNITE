@@ -3,6 +3,9 @@ import {themes} from '@storybook/theming'
 
 const preview: Preview = {
   parameters: {
+    backgrounds: {
+      default: 'dark'
+    },
     controls: {
       matchers: {
         color: /(background|color)$/i,
@@ -13,6 +16,7 @@ const preview: Preview = {
       themes: themes.dark
     }
   },
+  
 };
 
 export default preview;
