@@ -7,6 +7,7 @@ import { useRouter } from "next/router";
 
 export default function Register() {
     const session = useSession();
+    console.log(session)
     const router = useRouter();
 
     const hasAuthError = !!router.query.error;
