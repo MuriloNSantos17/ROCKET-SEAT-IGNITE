@@ -7,6 +7,8 @@ import { z } from "zod";
 import { getWeekDays } from "@/utils/get-week-days";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { converTimeStringToMinutes } from "@/utils/convert-time-string-to-minutes";
+import { api } from "@/lib/axios";
+import { useRouter } from "next/router";
 
 const timeIntervalsFormSchema = z.object({
     intervals: z.array(z.object({
@@ -33,19 +35,21 @@ const timeIntervalsFormSchema = z.object({
                 (interval) =>
                     interval.endTimeInMinutes - 60 >= interval.startTimeInMinutes,
             )
-        },{
+        }, {
             message: 'O horário de término deve ser pelo menos 1 hora distante do início'
         }),
 })
 
-type TimeIntervalsFormData = z.infer<typeof timeIntervalsFormSchema>
+type TimeIntervalFormOutput = z.output<typeof timeIntervalsFormSchema>
+type TimeIntervalFormInput = z.input<typeof timeIntervalsFormSchema>
+
 
 export default function TimeInterval() {
 
     const { register, handleSubmit, control, watch, formState: {
         isSubmitting,
         errors,
-    } } = useForm({
+    } } = useForm<TimeIntervalFormInput>({
         resolver: zodResolver(timeIntervalsFormSchema),
         defaultValues: {
             intervals: [
@@ -68,9 +72,16 @@ export default function TimeInterval() {
     });
 
     const intervals = watch('intervals');
+    const router = useRouter();
 
-    async function handleSetTimeIntervals(data: TimeIntervalsFormData) {
-        console.log(data)
+    async function handleSetTimeIntervals(data: any) {
+        const { intervals } = data as TimeIntervalFormInput;
+
+        await api.post('/users/time-intervals', {
+            intervals
+        })
+
+        await router.push('/register/update-profile')
     }
 
     return (

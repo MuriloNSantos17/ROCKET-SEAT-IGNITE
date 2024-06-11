@@ -1,9 +1,12 @@
 import { PrimsaAdapter } from "@/lib/auth/prisma-adpater";
-import { NextApiRequest, NextApiResponse } from "next";
+import { NextApiRequest, NextApiResponse, NextPageContext } from "next";
 import NextAuth, { NextAuthOptions } from "next-auth"
 import GoogleProvider, { GoogleProfile } from 'next-auth/providers/google';
 
-export function buildNextAuthOptions(req: NextApiRequest, res: NextApiResponse): NextAuthOptions {
+export function buildNextAuthOptions(
+  req: NextApiRequest | NextPageContext['req'],
+  res: NextApiResponse | NextPageContext['res']
+): NextAuthOptions {
   // Configure one or more authentication providers
   return {
     adapter: PrimsaAdapter(req, res),
