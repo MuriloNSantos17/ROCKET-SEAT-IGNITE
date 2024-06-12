@@ -91,8 +91,6 @@ export function Calendar({ selectedDate, onDateSelected }: CalendarProps) {
 
     }, [currentDate])
 
-    console.log(calendarWeeks)
-
     function handlePreviousMonth() {
         const previousMothDate = currentDate.subtract(1, 'month')
         setCurrentDate(previousMothDate)

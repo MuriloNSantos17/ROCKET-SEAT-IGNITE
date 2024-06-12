@@ -33,8 +33,8 @@ export default async function handler(
         return prisma.userTimeInterval.create({
             data: {
                 week_day: interval.weekDay,
-                time_end_in_minutes: interval.startTimeInMinutes,
-                time_start_in_minutes: interval.endTimeInMinutes,
+                time_end_in_minutes: interval.endTimeInMinutes,
+                time_start_in_minutes: interval.startTimeInMinutes,
                 user_id: session.user?.id
             }
         })
